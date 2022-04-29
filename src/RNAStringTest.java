@@ -13,7 +13,7 @@ class RNAStringTest {
         try {
             RNAString RNA_seq_wrong = new RNAString("13GGCC");
         } catch (Exception e) {
-            assertEquals(e.getMessage(), "This is not a RNA seq!");
+            assertEquals(e.getMessage(), "This is not a valid seq!");
         }
     }
 

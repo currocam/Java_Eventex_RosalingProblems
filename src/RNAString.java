@@ -1,26 +1,14 @@
-import java.nio.charset.StandardCharsets;
 import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RNAString {
+public class RNAString extends BioString{
     private final String sequence;
-    public RNAString(String text) throws Exception {
-        if (!this.isRNASeq(text)){
-            throw new Exception("This is not a RNA seq!");
-        }
-        this.sequence = text.toUpperCase();
-    }
-    private boolean isRNASeq(String text){
-        Pattern p = Pattern.compile("[^~`^<AUCG>\\|]", Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(text);
-        return !m.find();
-    }
-    public String getSequence() {
-        return sequence;
-    }
 
+    public RNAString(String sequence) throws Exception {
+        super(sequence, "[^~`^<AUCG>\\|]");
+        this.sequence = sequence;
+    }
     public ProteinString translate_into_protein () throws Exception {
         String codon = "";
         String new_seq = "";

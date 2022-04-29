@@ -18,7 +18,7 @@ class ProteinStringTest {
         try {
             ProteinString seq_wrong = new ProteinString("XXXXZZZ");
         } catch (Exception e) {
-            assertEquals(e.getMessage(), "This is not a Protein seq!");
+            assertEquals(e.getMessage(), "This is not a valid seq!");
         }
     }
 }
