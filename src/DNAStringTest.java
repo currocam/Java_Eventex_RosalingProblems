@@ -16,13 +16,23 @@ class DNAStringTest {
     @Test
     void countNucleotides() throws Exception{
         String seq = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-        int[] correct_count = new int [4];
-        correct_count[0] = 20;
-        correct_count[1] = 12;
-        correct_count[2] = 17;
-        correct_count[3] = 21;
+        int[] correct_count = {20,12,17,21};
         DNAString DNA_seq = new DNAString(seq);
         assertTrue(Arrays.equals(correct_count, DNA_seq.countNucleotides()));
+    }
+    @Test
+    void  reverseComplement() throws Exception{
+        String seq = "AAAACCCGGT";
+        DNAString DNA_seq = new DNAString(seq);
+        DNA_seq = DNA_seq.reverseComplement();
+        assertEquals("ACCGGGTTTT",DNA_seq.getSequence());
+    }
+    @Test
+    void  transcribing2RNA() throws Exception{
+        String seq = "GATGGAACTTGACTACGTAAATT";
+        DNAString DNA_seq = new DNAString(seq);
+        RNAString RNA_seq = DNA_seq.transcribing2RNA();
+        assertEquals("GAUGGAACUUGACUACGUAAAUU",RNA_seq.getSequence());
     }
     @Test
     public void whenWrongCharacterExceptionThrown() {
