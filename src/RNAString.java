@@ -1,6 +1,4 @@
 import java.util.Dictionary;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class RNAString extends BioString{
     private final String sequence;
@@ -13,7 +11,7 @@ public class RNAString extends BioString{
         String codon = "";
         String new_seq = "";
         String aa = null;
-        Dictionary codonTable = new RNACodonTable().getTable();
+        Dictionary codonTable = new RNACodonTable().getRNA_Table();
         for (int i = 0; i < sequence.length()-3; i =i+3){
             codon = sequence.substring(i, i+3);
             aa = (String) codonTable.get(codon);
