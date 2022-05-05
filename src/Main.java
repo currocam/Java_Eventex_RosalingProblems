@@ -76,6 +76,7 @@ public class Main {
     private static void ReverseNucleotidesMenu(String sequence) throws Exception {
         DNAString seqDNA = new DNAString(sequence);
         seqDNA = seqDNA.reverseComplement();
+        System.out.println("Your DNA sequence");
         System.out.println(seqDNA.getSequence());
     }
 
@@ -89,12 +90,14 @@ public class Main {
     private static void Transcribing2RNAMenu(String sequence) throws Exception {
         DNAString seqDNA = new DNAString(sequence);
         RNAString seqRNA = seqDNA.transcribing2RNA();
+        System.out.println("Your RNA sequence");
         System.out.println(seqRNA.getSequence());
     }
 
     private static void TranslateRNAMenu(String sequence) throws Exception {
         RNAString seqRNA = new RNAString(sequence);
         ProteinString seqProtein = seqRNA.translate_into_protein();
+        System.out.println("Your Protein sequence");
         System.out.println(seqProtein.getSequence());
     }
 
@@ -103,6 +106,7 @@ public class Main {
         System.out.println("Introduce your desired modulo:");
         scanner.nextLine();
         int modulo = scanner.nextInt();
+        System.out.println("Number of possible ARN modulo "+ modulo);
         System.out.println(seqProtein.mRNAFromProteinModulo(modulo));
     }
 }
