@@ -2,37 +2,10 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class RNACodonTable {
-    public Dictionary<String, String> getRNA_Table() {
-        return RNA_Table;
-    }
-    public Dictionary<Character, Integer> getProtein_Table() {
-        Hashtable<Character, Integer> Protein_Table = new Hashtable<>();
-        Protein_Table.put('F', 2);
-        Protein_Table.put('L', 6);
-        Protein_Table.put('S', 6);
-        Protein_Table.put('Y', 2);
-        Protein_Table.put('C', 2);
-        Protein_Table.put('W', 1);
-        Protein_Table.put('P', 4);
-        Protein_Table.put('H', 2);
-        Protein_Table.put('Q', 2);
-        Protein_Table.put('R', 6);
-        Protein_Table.put('I', 3);
-        Protein_Table.put('M', 1);
-        Protein_Table.put('T', 4);
-        Protein_Table.put('N', 2);
-        Protein_Table.put('K', 2);
-        Protein_Table.put('V', 4);
-        Protein_Table.put('A', 4);
-        Protein_Table.put('D', 2);
-        Protein_Table.put('E', 2);
-        Protein_Table.put('G', 4);
-        return Protein_Table;
-    }
     private final Dictionary<String, String> RNA_Table;
 
     public RNACodonTable() {
-        RNA_Table =  new Hashtable<>();
+        RNA_Table = new Hashtable<>();
         RNA_Table.put("UUU", "F");
         RNA_Table.put("UUC", "F");
         RNA_Table.put("UUA", "L");
@@ -100,6 +73,9 @@ public class RNACodonTable {
         RNA_Table.put("GGC", "G");
         RNA_Table.put("GGA", "G");
         RNA_Table.put("GGG", "G");
+    }
 
+    public Dictionary<String, String> getRNA_Table() {
+        return RNA_Table;
     }
 }
