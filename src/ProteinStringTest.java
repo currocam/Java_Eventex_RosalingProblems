@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Dictionary;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProteinStringTest {
 
@@ -13,17 +11,19 @@ class ProteinStringTest {
         ProteinString seq_short = new ProteinString("FFLL");
         assertEquals("FFLL", seq_short.getSequence());
         assertEquals("AGGCCAGGCGCCCAGA", seq_happy_path.getSequence());
-        assertEquals("AGGCCAGGCGCCCAGA",seq_lowercase.getSequence());
+        assertEquals("AGGCCAGGCGCCCAGA", seq_lowercase.getSequence());
     }
+
     @Test
     void mRNAFromProteinModulo() throws Exception {
         ProteinString seq = new ProteinString("MA");
-        assertEquals(12,seq.mRNAFromProteinModulo(1000000));
+        assertEquals(12, seq.mRNAFromProteinModulo(1000000));
     }
+
     @Test
     public void whenWrongCharacterExceptionThrown() {
         try {
-            ProteinString seq_wrong = new ProteinString("XXXXZZZ");
+            new ProteinString("XXXXZZZ");
         } catch (Exception e) {
             assertEquals(e.getMessage(), "This is not a valid seq!");
         }
