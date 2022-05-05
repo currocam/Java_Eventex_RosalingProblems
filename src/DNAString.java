@@ -35,16 +35,11 @@ public class DNAString extends BioString{
         char[] nucleotides = this.sequence.toCharArray();
         int[] nucleotides_count = new int[4];
         for (char nucleotide : nucleotides) {
-            if (nucleotide == 'A'){
-                nucleotides_count[0] += 1;
-            } else if (nucleotide == 'C') {
-                nucleotides_count[1] += 1;
-            }
-            else if (nucleotide == 'G') {
-                nucleotides_count[2] += 1;
-            }
-            else if (nucleotide == 'T') {
-                nucleotides_count[3] += 1;
+            switch (nucleotide){
+                case 'A': nucleotides_count[0] += 1; break;
+                case 'C': nucleotides_count[1] += 1; break;
+                case 'G': nucleotides_count[2] += 1; break;
+                case 'T': nucleotides_count[3] += 1; break;
             }
         }
         return nucleotides_count;

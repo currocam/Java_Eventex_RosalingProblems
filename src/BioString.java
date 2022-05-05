@@ -11,7 +11,6 @@ public class BioString {
             throw new Exception("This is not a valid seq!");
         }
     }
-
     private boolean CheckWrongSeq(String text, String regex) {
         Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(text);

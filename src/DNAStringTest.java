@@ -18,7 +18,8 @@ class DNAStringTest {
         String seq = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
         int[] correct_count = {20,12,17,21};
         DNAString DNA_seq = new DNAString(seq);
-        assertTrue(Arrays.equals(correct_count, DNA_seq.countNucleotides()));
+        assertEquals(Arrays.toString(correct_count),
+                Arrays.toString(DNA_seq.countNucleotides()));
     }
     @Test
     void  reverseComplement() throws Exception{
