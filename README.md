@@ -83,6 +83,7 @@ Choose your option :
 
 ## [Inferring mRNA from Protein](https://rosalind.info/problems/mrna/)
 
+```
 Choose your option : 6
 Enter your sequence: CFAQTVSPAEKWSVHIAMHPQVNIYSVTRKRYAHLSARPADEIAVDRDVPWGVDSLITLACFAQTVSPAEKWSVHIAMHPQVNIYSVTRKRYAHLSARPADEIAVDRDVPWGVDSLITLA
 1- Count the number of nucleotides in a DNA sequence. 
@@ -97,4 +98,5 @@ Introduce your desired modulo:
 100
 Number of possible ARN modulo 100
 8
+```
 
